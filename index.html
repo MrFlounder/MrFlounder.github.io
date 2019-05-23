@@ -18,22 +18,26 @@
   src="https://www.facebook.com/tr?id=2368620770041135&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+
 </head>
 <header><title>This is title</title></header>
 <body>
-	<script>
-	  fbq('track', 'StartTrial', {
-	    value: 99,
-	    currency: 'USD',
-	    predicted_ltv: '1000',
-	  });
-	</script>
 	<h1> This is a business page that fires pixel events</h1>
 	<div id="EventsContainer">
 		<button>ViewContent</button>
 		<button>Purchase</button>
 		<button>Subscribe</button>
-		<button>StartTrail</button>
+		<button id="startTrialButton">Start Trial</button>
+		<script type="text/javascript">
+		document.getElementById("startTrialButton").addEventListener('click', function() {
+			console.log("Fire start trial!")
+			fbq('track', 'StartTrial', {
+			    value: 99,
+			    currency: 'USD',
+			    predicted_ltv: '1000',
+		  	});
+		}, false);
+		</script>
 	</div>
 </body>
 </html>
