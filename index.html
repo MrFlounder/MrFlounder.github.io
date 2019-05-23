@@ -21,6 +21,13 @@
 </head>
 <header><title>This is title</title></header>
 <body>
+	<script>
+	  fbq('track', 'StartTrial', {
+	    value: 99,
+	    currency: 'USD',
+	    predicted_ltv: '1000',
+	  });
+	</script>
 	<h1> This is a business page that fires pixel events</h1>
 	<div id="EventsContainer">
 		<button>ViewContent</button>
